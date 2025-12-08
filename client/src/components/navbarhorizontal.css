@@ -1,0 +1,42 @@
+/* navbarhorizontal.css */
+
+.navbar-horizontal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: linear-gradient(90deg, #43a047, #a5d6a7); /* Green gradient */
+  color: #ffffff;
+  font-family: 'Cursive', sans-serif;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 80%;
+}
+
+.navbar-horizontal .logo {
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.navbar-horizontal .nav-items {
+  display: flex;
+  gap: 25px;
+}
+
+.navbar-horizontal .nav-items a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+.navbar-horizontal .nav-items a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #e8f5e9;
+  transform: translateY(-2px);
+}

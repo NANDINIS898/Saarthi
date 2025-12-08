@@ -1,0 +1,71 @@
+/* navbarvertical.css */
+
+.navbar-vertical {
+  width: 400px;
+  right: 0;
+  
+  height: 100vh;
+  background: linear-gradient(to bottom, #4caf50, #81c784); /* green gradient */
+  color: #ffffff;
+  font-family: 'Cursive', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 10px;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+}
+
+.profile-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.profile-pic {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  margin-bottom: 10px;
+  object-fit: cover;
+}
+
+.profile-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 0;
+}
+
+.nav-list {
+  list-style: none;
+  width: 60%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-item {
+  width: 100%;
+  /* chatarea.css */
+  padding: 20px;
+
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  transition: all 0.3s ease;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-item:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  transform: translateX(5px);
+}
+
+.nav-item:active {
+  background-color: rgba(255, 255, 255, 0.5);
+}

@@ -14,7 +14,8 @@ const Login = () => {
 
     try {
       const res = await loginUser(form);
-      setToken(res.data.token);
+      setToken(res.data.access_token);
+
       navigate("/dashboard");
     } catch (err) {
       alert("Invalid credentials");
