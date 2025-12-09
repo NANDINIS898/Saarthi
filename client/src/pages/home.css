@@ -1,0 +1,129 @@
+/* Full Page Layout */
+.home-container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(to right, #f5f7fa, #e6ecf5);
+    font-family: "Poppins", sans-serif;
+  }
+  
+  /* LEFT ANIMATION SECTION */
+  .left-section {
+    flex: 1;
+    padding: 100px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(135deg, #7ed957, #4caf50, #0d47a1);
+    color: #222;
+  }
+  
+  /* SAARTHI float animation */
+ .saarthi-animation {
+    font-size: 80px; /* impactful size */
+    font-weight: 900; /* bold */
+    font-family: 'Montserrat', 'Poppins', sans-serif; /* modern font */
+    letter-spacing: 4px; /* stylish spacing */
+    background: linear-gradient(90deg, #000000, #34d0ff); /* gradient text */
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; /* makes gradient visible */
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.2); /* subtle shadow */
+    margin: 0;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards; /* fade in and stay */
+  }
+  
+  /* fade-in animation */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  
+  
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0px); }
+  }
+  
+  /* TAGLINE TEXT BELOW SAARTHI */
+ .tagline {
+    font-size: 28px; /* good size for visibility */
+    margin-top: 20px;
+    font-weight: 300; /* thin and sleek */
+    font-family: 'Raleway', 'Helvetica Neue', 'Poppins', sans-serif; /* thin, curvy, modern font */
+    color: #00796b; /* calm professional color */
+    opacity: 0;
+    animation: fadeInTagline 1s ease-in-out forwards;
+    height: 40px; /* keeps layout stable */
+    letter-spacing: 1px;
+  }
+  
+  /* Fade-in animation */
+  @keyframes fadeInTagline {
+    0% {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  
+  /* RIGHT LOGIN/SIGNUP SECTION */
+.right-section {
+    width: 450px;
+    background: #ffffff;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); /* softer, modern shadow */
+    padding: 50px 40px;
+    border-radius: 12px; /* rounded corners */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    /* Move the card downward */
+    margin-top: 61px; /* adjust this value as needed */
+  }
+  
+  /* Toggle buttons container */
+  .toggle-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 25px;
+  }
+  
+  /* Toggle buttons */
+  .toggle-buttons button {
+    width: 48%;
+    padding: 14px 0;
+    border: none;
+    background: #f0f0f0;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+  
+  .toggle-buttons button:hover {
+    background: #e0e0e0;
+  }
+  
+  .toggle-buttons .active {
+    background: #0d47a1; /* primary color */
+    color: #ffffff;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(13, 71, 161, 0.3); /* subtle highlight for active */
+  }
+  
+  /* Form box */
+  .form-box {
+    width: 100%;
+    margin-top: 15px;
+  }
+  
+  
