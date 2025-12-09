@@ -1,52 +1,222 @@
-/* Full page container */
+/* --------------------------
+   GLOBAL STYLING
+---------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .dashboard-container {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  font-family: 'Cursive', sans-serif;
+  font-family: 'Inter', sans-serif;
+  /* smoother modern gradient */
+  background: linear-gradient(
+    90deg,
+    #f7fff0 0%,
+    #e9ffcb 40%,
+    #d4f27e 100%
+  );
+
+  color: #2d2d2d;
+
+  /* subtle padding for breathing space */
+  padding: 10px;
+
+  /* slight depth to make UI feel premium */
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.05);
+
+  /* keeps layout clean on all screens */
+  overflow: hidden;
+}
+/* --------------------------
+   HORIZONTAL NAVBAR
+---------------------------- */
+.navbar-horizontal {
+  height: 60px;
+  width: 100%;
+  background: #377D36; /* deep blue */
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  font-weight: 600;
+  font-size: 18px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  z-index: 1000;
 }
 
-/* Horizontal navbar at top */
-.dashboard-container > .navbar-horizontal {
-  flex-shrink: 0;
+/* Smooth text effect for navbar items */
+.navbar-horizontal * {
+  transition: all 0.2s ease-in-out;
 }
 
-/* Main body container: row layout */
+/* --------------------------
+   MAIN BODY
+---------------------------- */
 .dashboard-body {
   display: flex;
-  flex-direction: row; /* Important! Left → center → right */
   flex: 1;
-  background: linear-gradient(180deg, #e8f5e9, #ffffff);
   overflow: hidden;
-  gap: 10px; /* optional spacing */
+  /* Smooth spacing between sections */
+  gap: 24px;
+  padding: 28px;
+
+  /* Polished clean background */
+  background: linear-gradient(
+    90deg,
+    #f7fff0 0%,
+    #e9ffcb 40%,
+    #d4f27e 100%
+  );
+
+  /* depth to give dashboard a premium layered feel */
+  border-radius: 12px;
+  box-shadow: inset 0 0 18px rgba(0, 0, 0, 0.05);
 }
 
-/* Left: Loan Status */
+/* --------------------------
+   LEFT PANEL: LOAN STATUS
+---------------------------- */
 .loan-status {
-  width: 20%;
-  background: #a5d6a7;
-  padding: 20px;
+  width: 280px;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
   overflow-y: auto;
-  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-  border-radius: 10px;
+  flex-shrink: 0;
+  transition: 0.3s;
 }
 
-/* Center: Chat Area */
+.loan-status:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+}
+
+/* Scrollbar styling */
+.loan-status::-webkit-scrollbar {
+  width: 6px;
+}
+
+.loan-status::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.2);
+  border-radius: 3px;
+}
+
+/* --------------------------
+   CENTER PANEL: CHAT AREA
+---------------------------- */
 .chat-area {
-  flex: 1; /* take remaining space */
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.7); /* transparent */
-  border-radius: 15px;
+  flex: 1;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
   overflow-y: auto;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: 0.3s;
 }
 
-/* Right: Vertical Navbar */
-.navbar-vertical {
-  width: 200px;
-  background: #43a047;
-  color: white;
-  padding: 20px;
-  overflow-y: auto;
-  border-radius: 10px;
+.chat-area:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.06);
 }
+
+/* --------------------------
+   RIGHT PANEL: VERTICAL NAVBAR
+---------------------------- */
+.navbar-vertical {
+  width: 220px;
+  background: #377D36; /* dark blue */
+  color: white;
+  padding: 30px 15px;
+  border-radius: 20px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  box-shadow: -6px 0 20px rgba(0,0,0,0.08);
+}
+
+.navbar-vertical a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 12px 15px;
+  border-radius: 12px;
+  transition: all 0.2s ease-in-out;
+}
+
+.navbar-vertical a:hover {
+  background: rgba(255,255,255,0.1);
+  transform: translateX(5px);
+}
+
+
+
+/* --------------------------
+   SCROLLBARS
+---------------------------- */
+.chat-area::-webkit-scrollbar,
+.navbar-vertical::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-area::-webkit-scrollbar-thumb,
+.navbar-vertical::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.15);
+  border-radius: 3px;
+}
+
+/* --------------------------
+   RESPONSIVE DESIGN
+---------------------------- */
+@media (max-width: 1200px) {
+  .loan-status { width: 240px; }
+  .navbar-vertical { width: 180px; }
+}
+
+@media (max-width: 992px) {
+  .dashboard-body {
+    flex-direction: column;
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .loan-status,
+  .navbar-vertical {
+    width: 100%;
+    flex-direction: row;
+    overflow-x: auto;
+    padding: 15px;
+    border-radius: 15px;
+  }
+
+  .chat-area {
+    padding: 20px;
+  }
+}
+
+/* --------------------------
+   ADDITIONAL STYLING
+---------------------------- */
+.loan-status h2 {
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #1c3d1b;
+}
+.chat-area h2 {
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #1c3d1b;
+  align-self: center;
+  font-size: 50px;
+  font-style: italic;
+}
+
