@@ -7,8 +7,8 @@ const Home = () => {
   const [showLogin, setShowLogin] = useState(true);
   const [taglineIndex, setTaglineIndex] = useState(0);
   const taglines = [
-    "Your 24/7 Personal Loan Assistant",
-    "Trustworthy & Transparent."
+    "The end of frustration & Begining of Trust",
+    "Your 24/7 Loan AI Assistant"
   ];
 
   // Change tagline every 3 seconds

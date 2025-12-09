@@ -1,5 +1,5 @@
 /* --------------------------
-   GLOBAL STYLING
+   GLOBAL BASE
 ---------------------------- */
 * {
   margin: 0;
@@ -7,37 +7,23 @@
   box-sizing: border-box;
 }
 
-.dashboard-container {
-  display: flex;
-  flex-direction: column;
+body {
+  font-family: "Inter", sans-serif;
+  background: linear-gradient(90deg, #f7fff0 0%, #e9ffcb 40%, #d4f27e 100%);
   height: 100vh;
-  font-family: 'Inter', sans-serif;
-  /* smoother modern gradient */
-  background: linear-gradient(
-    90deg,
-    #f7fff0 0%,
-    #e9ffcb 40%,
-    #d4f27e 100%
-  );
-
-  color: #2d2d2d;
-
-  /* subtle padding for breathing space */
-  padding: 10px;
-
-  /* slight depth to make UI feel premium */
-  box-shadow: inset 0 0 20px rgba(0,0,0,0.05);
-
-  /* keeps layout clean on all screens */
   overflow: hidden;
 }
+
 /* --------------------------
-   HORIZONTAL NAVBAR
+   HORIZONTAL NAVBAR (TOP)
 ---------------------------- */
 .navbar-horizontal {
-  height: 60px;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  background: #377D36; /* deep blue */
+  height: 60px;
+  background: #377d36;
   color: white;
   display: flex;
   align-items: center;
@@ -45,178 +31,165 @@
   padding: 0 30px;
   font-weight: 600;
   font-size: 18px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
   z-index: 1000;
 }
 
-/* Smooth text effect for navbar items */
-.navbar-horizontal * {
-  transition: all 0.2s ease-in-out;
-}
-
 /* --------------------------
-   MAIN BODY
+   DASHBOARD BODY GRID
 ---------------------------- */
 .dashboard-body {
-  display: flex;
-  flex: 1;
+  display: grid;
+  grid-template-columns: 280px 1fr 260px; /* left | center | right */
+  gap: 20px;
+  height: calc(100vh - 60px);
+  margin-top: 60px;
   overflow: hidden;
-  /* Smooth spacing between sections */
-  gap: 24px;
-  padding: 28px;
-
-  /* Polished clean background */
-  background: linear-gradient(
-    90deg,
-    #f7fff0 0%,
-    #e9ffcb 40%,
-    #d4f27e 100%
-  );
-
-  /* depth to give dashboard a premium layered feel */
-  border-radius: 12px;
-  box-shadow: inset 0 0 18px rgba(0, 0, 0, 0.05);
 }
 
 /* --------------------------
    LEFT PANEL: LOAN STATUS
 ---------------------------- */
 .loan-status {
+  position: fixed;
+  top: 60px;
+  left: 0;
   width: 280px;
-  background: #ffffff;
-  border-radius: 20px;
-  padding: 25px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  height: calc(100vh - 60px);
+  background: #b2e8a4;
+  border-right: 2px solid #9dd58c;
+  padding: 30px 20px;
+  box-shadow: 3px 0 10px rgba(0,0,0,0.08);
   overflow-y: auto;
-  flex-shrink: 0;
-  transition: 0.3s;
 }
 
-.loan-status:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+.loan-status h2 {
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #1c3d1b;
 }
 
-/* Scrollbar styling */
-.loan-status::-webkit-scrollbar {
-  width: 6px;
+.loan-status ul {
+  list-style: none;
+  margin-top: 10px;
 }
 
-.loan-status::-webkit-scrollbar-thumb {
-  background: rgba(0,0,0,0.2);
-  border-radius: 3px;
+.loan-status li {
+  background: white;
+  margin: 12px 0;
+  padding: 12px 15px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  border-left: 6px solid #377d36;
+  transition: 0.2s ease;
+}
+
+.loan-status li:hover {
+  transform: translateX(5px);
 }
 
 /* --------------------------
    CENTER PANEL: CHAT AREA
 ---------------------------- */
 .chat-area {
-  flex: 1;
-  background: #ffffff;
-  padding: 30px;
+  position: absolute;
+  top: 60px; /* below the top navbar */
+  left: 280px; /* width of the left panel */
+  right: 260px; /* width of the right panel */
+  bottom: 0;
+  
   border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  padding: 25px 35px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  
+  height: calc(100vh - 60px); /* full height minus top navbar */
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  transition: 0.3s;
-}
-
-.chat-area:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.06);
-}
-
-/* --------------------------
-   RIGHT PANEL: VERTICAL NAVBAR
----------------------------- */
-.navbar-vertical {
-  width: 220px;
-  background: #377D36; /* dark blue */
-  color: white;
-  padding: 30px 15px;
-  border-radius: 20px;
-  flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-  box-shadow: -6px 0 20px rgba(0,0,0,0.08);
-}
-
-.navbar-vertical a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-  padding: 12px 15px;
-  border-radius: 12px;
-  transition: all 0.2s ease-in-out;
-}
-
-.navbar-vertical a:hover {
-  background: rgba(255,255,255,0.1);
-  transform: translateX(5px);
+  align-items: center;
 }
 
 
-
-/* --------------------------
-   SCROLLBARS
----------------------------- */
-.chat-area::-webkit-scrollbar,
-.navbar-vertical::-webkit-scrollbar {
-  width: 6px;
-}
-
-.chat-area::-webkit-scrollbar-thumb,
-.navbar-vertical::-webkit-scrollbar-thumb {
-  background: rgba(0,0,0,0.15);
-  border-radius: 3px;
-}
-
-/* --------------------------
-   RESPONSIVE DESIGN
----------------------------- */
-@media (max-width: 1200px) {
-  .loan-status { width: 240px; }
-  .navbar-vertical { width: 180px; }
-}
-
-@media (max-width: 992px) {
-  .dashboard-body {
-    flex-direction: column;
-    padding: 15px;
-    gap: 15px;
-  }
-
-  .loan-status,
-  .navbar-vertical {
-    width: 100%;
-    flex-direction: row;
-    overflow-x: auto;
-    padding: 15px;
-    border-radius: 15px;
-  }
-
-  .chat-area {
-    padding: 20px;
-  }
-}
-
-/* --------------------------
-   ADDITIONAL STYLING
----------------------------- */
-.loan-status h2 {
-  font-weight: 700;
-  margin-bottom: 15px;
-  color: #1c3d1b;
-}
 .chat-area h2 {
+  font-size: 36px;
   font-weight: 700;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
   color: #1c3d1b;
-  align-self: center;
-  font-size: 50px;
   font-style: italic;
 }
 
+.chat-box {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Message bubbles */
+.message {
+  max-width: 75%;
+  padding: 12px 18px;
+  border-radius: 18px;
+  line-height: 1.5;
+  font-size: 15px;
+}
+
+.bot {
+  background: #c9f0b5;
+  align-self: flex-start;
+}
+
+.user {
+  background: #377d36;
+  color: white;
+  align-self: flex-end;
+}
+
+/* Chat input */
+.chat-area input {
+  width: 100%;
+  margin-top: 25px;
+  padding: 12px 18px;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 15px;
+}
+
+/* --------------------------
+   RIGHT PANEL: NAVBAR VERTICAL
+---------------------------- */
+.navbar-vertical {
+  position: fixed;
+  top: 60px;
+  right: 0;
+  width: 260px;
+  height: calc(100vh - 60px);
+  background: #e2ffce;
+  border-left: 2px solid #b4e49a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 15px;
+  box-shadow: -3px 0 10px rgba(0,0,0,0.08);
+  overflow-y: auto;
+}
+
+.navbar-vertical a {
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  color: #1c3d1b;
+  background: white;
+  border-radius: 12px;
+  padding: 12px 0;
+  margin: 8px 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: 0.2s;
+}
+
+.navbar-vertical a:hover {
+  background: #c9f0b5;
+  transform: translateY(-2px);
+}

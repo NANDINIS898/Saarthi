@@ -22,7 +22,7 @@
  .saarthi-animation {
     font-size: 80px; /* impactful size */
     font-weight: 900; /* bold */
-    font-family: 'Montserrat', 'Poppins', sans-serif; /* modern font */
+    font-family:Georgia, 'Times New Roman', Times, serif;
     letter-spacing: 4px; /* stylish spacing */
     background: linear-gradient(90deg, #000000, #34d0ff); /* gradient text */
     -webkit-background-clip: text; 
@@ -30,6 +30,7 @@
     text-shadow: 2px 2px 8px rgba(0,0,0,0.2); /* subtle shadow */
     margin: 0;
     opacity: 0;
+    text-align: center;
     animation: fadeIn 1.5s forwards; /* fade in and stay */
   }
   
@@ -49,15 +50,19 @@
   
   /* TAGLINE TEXT BELOW SAARTHI */
  .tagline {
-    font-size: 28px; /* good size for visibility */
+    font-size: 35px; /* good size for visibility */
     margin-top: 20px;
+    text-decoration:overline;
+    text-shadow:#000000;
     font-weight: 300; /* thin and sleek */
-    font-family: 'Raleway', 'Helvetica Neue', 'Poppins', sans-serif; /* thin, curvy, modern font */
-    color: #00796b; /* calm professional color */
+    text-align: center;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; /* thin, curvy, modern font */
+    color: linear-gradient(90deg, #000000, #21cbff);
     opacity: 0;
     animation: fadeInTagline 1s ease-in-out forwards;
     height: 40px; /* keeps layout stable */
     letter-spacing: 1px;
+    font-display: fallback;
   }
   
   /* Fade-in animation */
@@ -101,7 +106,7 @@
     width: 48%;
     padding: 14px 0;
     border: none;
-    background: #f0f0f0;
+    background: #0f8a17;
     cursor: pointer;
     font-size: 16px;
     font-weight: 500;
@@ -114,10 +119,10 @@
   }
   
   .toggle-buttons .active {
-    background: #0d47a1; /* primary color */
+    background: #0f8a17; /* primary color */
     color: #ffffff;
     font-weight: 600;
-    box-shadow: 0 4px 12px rgba(13, 71, 161, 0.3); /* subtle highlight for active */
+    box-shadow: 0 4px 12px rgba(9, 58, 26, 0.3); /* subtle highlight for active */
   }
   
   /* Form box */
