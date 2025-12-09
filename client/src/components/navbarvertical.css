@@ -3,11 +3,15 @@
 .navbar-vertical {
   width: 280px;
   height: 100vh;
-  background: #ffffff;
+  background: #e2ffce;
+  color: #132d14;
   border-right: 1px solid #e5e5e5;
   font-family: "Poppins", sans-serif;
   display: flex;
+  margin-top: 0%;
+  top: auto;
   flex-direction: column;
+  margin-inline-start: auto;
   align-items: center;
   padding: 30px 15px;
 }
@@ -32,7 +36,7 @@
   margin-top: 12px;
   font-size: 20px;
   font-weight: 500;
-  color: #ffffff;
+  color: #0a1c10;
   letter-spacing: 0.5px;
 }
 

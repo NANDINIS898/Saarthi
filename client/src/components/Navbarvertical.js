@@ -1,5 +1,5 @@
 import React from "react";
-
+import profilePic from "./profile.png";
 import "./navbarvertical.css";
 
 const NavbarVertical = () => {
@@ -7,7 +7,7 @@ const NavbarVertical = () => {
     <aside className="navbar-vertical">
       <div className="profile-section">
         <img
-          src="https://via.placeholder.com/80"
+          src={profilePic}
           alt="Profile"
           className="profile-pic"
         />

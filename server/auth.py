@@ -1,9 +1,9 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
-from schemas import SignupModel, LoginModel, UserResponse
-from models import User
-from utils import hash_password, verify_password, create_access_token, SECRET_KEY, ALGORITHM
-from database import get_db, SessionLocal
+from server.schemas import SignupModel, LoginModel, UserResponse
+from server.models import User
+from server.utils import hash_password, verify_password, create_access_token, SECRET_KEY, ALGORITHM
+from server.database import get_db, SessionLocal
 from fastapi.security import OAuth2PasswordBearer
 from jose import jwt, JWTError
 
