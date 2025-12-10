@@ -1,10 +1,19 @@
 from crewai import Agent, Task
 from utils.credit_api import get_credit_score
+from server.llm_api import get_groq_response
+
+# Patch CrewAI to disable LLM globally (prevents any default OpenAI fallback)
+import crewai
+crewai.utilities.llm_utils._llm_via_environment_or_fallback = lambda *a, **kw: None
+
+def underwriting_agent_llm(prompt: str):
+    return get_groq_response(prompt)
 
 underwriting_agent = Agent(
     role="Underwriting Agent",
     goal="Evaluate loan eligibility using credit score and salary logic.",
     backstory="A risk analyst who validates loan eligibility based on rules and credit data.",
+    llm=None
 )
 
 underwriting_task = Task(
