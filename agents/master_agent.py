@@ -1,8 +1,4 @@
-
-try:
-    from crewai import Crew  # optional
-except Exception:
-    Crew = None 
+from crewai import Crew  # optional
 from utils.main import MasterOrchestrator
 
 
